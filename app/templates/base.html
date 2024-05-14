@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+      
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLG7g_vJX8MIB4mUlajlUTjJ01wXq4tyY&callback=initMap" async defer></script>
+        
+        <style>
+            #mapPage { width: 100%; display: flex; flex-direction: row; }
+        </style>
+         <style>
+            #mapItemsList { width: 40%; display: flex; flex-direction: row; flex-wrap: wrap; padding-left: 5%; padding-right: 3%; }
+        </style>
+        <style>
+            #map { width: 60%; height: 600px; }
+        </style>
+        <style>
+            #listItem{ width: 40%; border: 1px solid gray; border-radius: 5px; margin-left: 5%; margin-top: 5%; text-align: center;}
+        </style>
+        
+    </head>
+    <body>
+                 
+ 
+
+        <div>
+            earthquakes:  <a href="{{ url_for('index') }}">Home</a>
+        </div>
+        <hr>
+        {% block content %}{% endblock %}
+
+    </body>
+</html>
