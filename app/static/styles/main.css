@@ -66,3 +66,7 @@ canvas {
     display: block;
     margin-bottom: 5px;
 }
+.detail_text {
+    padding-left: 25px;
+
+}

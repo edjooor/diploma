@@ -100,7 +100,7 @@ Promise.all([
                 tooltip.style("opacity", 1)
                     .style("left", `${mouseX + 5}px`)
                     .style("top", `${mouseY + 5}px`)
-                    .html(`<strong>${point.name} <br/> Координаты: ${point.coordinates} <br/> Дата: ${point.date}</strong>`);
+                    .html(`<strong>${point.name}  <br/> Дата: ${point.date}<br/> Координаты: ${point.coordinates}</strong>`);
                 found = true;
             }
         });
