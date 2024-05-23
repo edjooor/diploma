@@ -1,0 +1,18 @@
+.detail {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+
+}
+
+.detail_text {
+    grid-column: 1;
+
+}
+
+
+
+.detail_visualization {
+    grid-column: 2;
+
+}

@@ -4,43 +4,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/earthquake_detail.css') }}">
         <style>
-            #mapPage{
-                display: flex;
-                box-sizing: border-box;
-                flex-direction: row;
-            }
-            #mapItemsList { width: 40%; display: flex; flex-direction: row; flex-wrap: wrap; padding-left: 5%; padding-right: 3%; }
-            #listItem{ width: 40%; border: 1px solid gray; border-radius: 5px; margin-left: 5%; margin-top: 5%; text-align: center;}
-            .globes{
-                box-sizing: border-box;
-            }
-            body {
-                font-family: Arial, sans-serif;
-            }
-            canvas {
-                display: block;
-                margin: auto;
-            }
-            .tooltip {
-                position: absolute;
-                
-                background: #fff;
-                padding: 5px;
-                border: 1px solid #ccc;
-                pointer-events: none;
-                opacity: 0;
-                transition: opacity 0.2s;
-            }
-            .controls {
-                position: absolute;
-                top: 60px;
-                left: 40%;
-            }
-            .controls button {
-                display: block;
-                margin-bottom: 5px;
-            }
+            
         </style>
        
         <script src="https://d3js.org/d3.v6.min.js"></script>

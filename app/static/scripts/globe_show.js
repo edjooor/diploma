@@ -1,13 +1,8 @@
-// let ert = document.getElementById("earthquake_data").innerText;
-// console.log(ert);
 let earthquakesJS = document.getElementById("earthquake_data").innerText;;
 earthquakesJS = earthquakesJS.replaceAll('(', '[');
 earthquakesJS = earthquakesJS.replaceAll(')', ']');
 earthquakesJS = earthquakesJS.replaceAll("'", '"');
 let jsonEarth = JSON.parse(earthquakesJS.replace(/None/g, 'null'));
-console.log(jsonEarth);
-
-
 
 const width = window.innerWidth * 0.6;
 const height = Math.min(width, 720);
@@ -27,14 +22,9 @@ const tooltip = d3.select("#tooltip");
 // Example points data
 let points = [{ coordinates: [0, 1], name: "", date: "" }];
 
-
-
 for (let i = 0; i < jsonEarth.length; ++i) {
-    points[i] = { coordinates: [Number(jsonEarth[i][4]), Number(jsonEarth[i][3])], name: "fjf", date: jsonEarth[i][1] };
+    points[i] = { coordinates: [Number(jsonEarth[i][4]), Number(jsonEarth[i][3])], name: jsonEarth[i][26], date: jsonEarth[i][1] };
 }
-console.log(points)
-
-
 
 
 // Fetch data and initialize the visualization
