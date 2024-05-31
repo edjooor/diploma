@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+    <title>Edit Earthquake</title>
+</head>
+<body>
+    <h1>Edit Earthquake</h1>
+    <form method="post">
+        {{ form.hidden_tag() }}
+
+
+        <p>
+            {{ form.reference.label }}<br>
+            {{ form.reference(size=32) }}
+        </p>
+        <p>
+            {{ form.eq_date.label }}<br>
+            {{ form.eq_date(size=32) }}
+        </p>
+        <p>
+            {{ form.eq_time.label }}<br>
+            {{ form.eq_time(size=32) }}
+        </p>
+    
+        <p>
+            {{ form.lattitude_deg.label }}<br>
+            {{ form.lattitude_deg(size=32) }}
+        </p>
+        <p>
+            {{ form.longtitude_deg.label }}<br>
+            {{ form.longtitude_deg(size=32) }}
+        </p>
+        <p>
+            {{ form.n.label }}<br>
+            {{ form.n(size=32) }}
+        </p>
+        <p>
+            {{ form.delta_min.label }}<br>
+            {{ form.delta_min(size=32) }}
+        </p>
+        <p>
+            {{ form.delta_max.label }}<br>
+            {{ form.delta_max(size=32) }}
+        </p>
+        <p>
+            {{ form.period_range.label }}<br>
+            {{ form.period_range(size=32) }}
+        </p>
+        <p>
+            {{ form.crustal_model.label }}<br>
+            {{ form.crustal_model(size=32) }}
+        </p>
+        <p>
+            {{ form.residual.label }}<br>
+            {{ form.residual(size=32) }}
+        </p>
+        <p>
+            {{ form.magnitude.label }}<br>
+            {{ form.magnitude(size=32) }}
+        </p>
+        <p>
+            {{ form.moment_0.label }}<br>
+            {{ form.moment_0(size=32) }}
+        </p>
+        <p>
+            {{ form.h_depth.label }}<br>
+            {{ form.h_depth(size=32) }}
+        </p>
+        <p>
+            {{ form.np1_azm.label }}<br>
+            {{ form.np1_azm(size=32) }}
+        </p>
+        <p>
+            {{ form.np1_dp.label }}<br>
+            {{ form.np1_dp(size=32) }}
+        </p>
+        <p>
+            {{ form.np1_slip.label }}<br>
+            {{ form.np1_slip(size=32) }}
+        </p>
+        <p>
+            {{ form.np2_azm.label }}<br>
+            {{ form.np2_azm(size=32) }}
+        </p>
+        <p>
+            {{ form.np2_dp.label }}<br>
+            {{ form.np2_dp(size=32) }}
+        </p>
+        <p>
+            {{ form.np2_slip.label }}<br>
+            {{ form.np2_slip(size=32) }}
+        </p>
+        <p>
+            {{ form.t_axis_azm.label }}<br>
+            {{ form.t_axis_azm(size=32) }}
+        </p>
+        <p>
+            {{ form.t_axis_pl.label }}<br>
+            {{ form.t_axis_pl(size=32) }}
+        </p>
+        <p>
+            {{ form.p_axis_azm.label }}<br>
+            {{ form.p_axis_azm(size=32) }}
+        </p>
+        <p>
+            {{ form.p_axis_pl.label }}<br>
+            {{ form.p_axis_pl(size=32) }}
+        </p>
+        <p>
+            {{ form.b_axis_azm.label }}<br>
+            {{ form.b_axis_azm(size=32) }}
+        </p>
+        <p>
+            {{ form.b_axis_pl.label }}<br>
+            {{ form.b_axis_pl(size=32) }}
+        </p>
+      
+
+
+        <p>{{ form.submit() }}</p>
+    </form>
+    <a href="{{ url_for('admin') }}">Back to Admin</a>
+</body>
+</html>

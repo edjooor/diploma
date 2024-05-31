@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+    <title>Admin</title>
+</head>
+<body>
+    <h1>Admin Page</h1>
+    <ul>
+        {% for earthquake in earthquakes_S1 %}
+            <li><a href="{{ url_for('edit', earthquake_id=earthquake[0]) }}">Edit {{ earthquake[0] }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('add_earthquake') }}">Add New Earthquake</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
