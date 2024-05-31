@@ -70,3 +70,42 @@ canvas {
     padding-left: 25px;
 
 }
+.editItem{
+    width: 90%;
+    border: 1px solid gray;
+    margin-top: 10px;
+    
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    
+    text-align: center;
+    text-decoration: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+   
+   
+
+}
+.editButton{
+    grid-column: 2;
+    margin-right: 5%;
+    justify-self: flex-end;
+}
+.editItemText{
+    grid-column: 1;
+}
+.mainAdminPage{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.navAdmin{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    
+}

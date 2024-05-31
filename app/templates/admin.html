@@ -2,15 +2,83 @@
 <html>
 <head>
     <title>Admin</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/earthquake_detail.css') }}">
+ 
 </head>
 <body>
-    <h1>Admin Page</h1>
-    <ul>
+    <h1 style="text-align: center;">Вы зашли как администратор </h1>
+    <p class="tableName"> Редактирование существующих и добавление новых записей:</p>
+    <div class="mainAdminPage">
+        <div style="display: flex; flex-direction: column;">
+    
+    
         {% for earthquake in earthquakes_S1 %}
-            <li><a href="{{ url_for('edit', earthquake_id=earthquake[0]) }}">Редактировать  {{ earthquake[26] }} дата: {{ earthquake[1] }}</a></li>
+        <div class="editItem">
+            <p class="editItemText">
+        <b>{{ earthquake[26] }}</b>
+        <br>
+        <b> Дата: </b>{{ earthquake[1] }}
+        <br>
+        <b> Широта: </b>{{ earthquake[3] }}   <br><b> Долгота: </b>{{ earthquake[4] }}
+        <br>
+        </p>
+            <a class="editButton" href="{{ url_for('edit', earthquake_id=earthquake[0]) }}">Перейти к редактированию  </a>
+           
+            </div>
         {% endfor %}
-    </ul>
-    <a href="{{ url_for('add_earthquake') }}">Add New Earthquake</a>
-    <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+    <div style="display: flex; flex-direction: column; margin-top: 5%;">
+    <div  class="navAdmin">
+        <a href="{{ url_for('add_earthquake') }}">Добавление нового землетрясения</a>
+        <a href="{{ url_for('logout') }}">Выход из панели администратора</a>
+
+    </div>
+    <p style="">
+        <b>На данной странице существует возможность добавления и редактирования записей о землетрясениях</b> 
+        <br>
+        <b>Для редактирования:</b>
+        
+        <ol>
+            <li>
+                Выбрать требуемое землетрясения из списка, расположенном с левой стороны
+            </li>
+            <li>
+                Перейти по кнопке "Перейти к редактированию"
+
+            </li>
+            <li>
+                Произвести редактирование нужных параметров и применить изменения
+            </li>
+            <li>
+                Если возникли трудности с поиском нужного землетрясения, введите в поле поиск наименование или дату требуемого землетрясения или произведите соответствующую сортировку
+            </li>
+        </ol>
+        <br>
+        <b>Для добавления записи:</b>
+        <ol>
+            <li>
+                Перейдите по кнопке "Добавление нового землетрясения"
+            </li>
+            <li>
+                Внесите требуемую информацию в две таблицы
+            </li>
+            <li>
+                Все поля таблиц должны быть заполнены
+            </li>
+            <li>
+                Добавьте землетрясение, нажав на соответствующую кнопку
+            </li>
+        </ol>
+        <br>
+        <b>При возникновении трудностей, обратитесь в техподдержку</b>
+
+    </p>
+</div>
+    
+
+</div>
 </body>
 </html>

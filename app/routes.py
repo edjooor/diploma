@@ -1,9 +1,4 @@
-# from flask import render_template, flash, redirect, url_for
-# from app import app
-# import psycopg2, os, jinja2
-# import matplotlib.pyplot as plt
-# import obspy.imaging.beachball as beachball
-# import os
+
 from flask import render_template, flash, redirect, url_for, request
 from app import app
 import psycopg2, os, jinja2
@@ -54,7 +49,7 @@ class EditForm(FlaskForm):
     period_range = StringField('Period range, s:', validators=[DataRequired()]) 
     crustal_model = StringField('Crustal model:', validators=[DataRequired()]) 
     residual = StringField('ε:', validators=[DataRequired()]) 
-    magnitude = StringField('Магнитуда', validators=[DataRequired()]) 
+    magnitude = StringField('Magnitude:', validators=[DataRequired()]) 
     moment_0 = StringField('Mo, N m:', validators=[DataRequired()]) 
     h_depth = StringField('h, km:', validators=[DataRequired()]) 
     np1_azm = StringField('Nodal plane 1, azm, deg:', validators=[DataRequired()]) 
@@ -71,7 +66,24 @@ class EditForm(FlaskForm):
     b_axis_pl = StringField('B axis, pl, deg:', validators=[DataRequired()]) 
     reference = StringField('Название:', validators=[DataRequired()]) 
 
-    submit = SubmitField('Save Changes')
+    n_s2 =  StringField('N:', validators=[DataRequired()]) 
+    delta_min_s2 =  StringField('Δmin, deg:', validators=[DataRequired()]) 
+    delta_max_s2 = StringField('Δmax, deg:', validators=[DataRequired()]) 
+    period_range_s2 = StringField('Period range, s:', validators=[DataRequired()]) 
+    residual_s2 = StringField('ε:', validators=[DataRequired()]) 
+    moment_0_s2 = StringField('Mo, N m:', validators=[DataRequired()]) 
+    h_depth_s2 = StringField('h, km:', validators=[DataRequired()]) 
+    IntegralCharacteristics_delta_t_s2 = StringField('Δt, s:', validators=[DataRequired()]) 
+    IntegralCharacteristics_l_max_s2 = StringField('lmax, km:', validators=[DataRequired()]) 
+    IntegralCharacteristics_l_min_s2 = StringField('lmin, km:', validators=[DataRequired()]) 
+    IntegralCharacteristics_v_speed_s2 = StringField('v, km/s:', validators=[DataRequired()]) 
+    IntegralCharacteristics_f_1_s2 = StringField('ϕ1, °:', validators=[DataRequired()]) 
+    IntegralCharacteristics_f_v_s2 = StringField('ϕv, °:', validators=[DataRequired()]) 
+    rupture_plane_s2 = StringField('Rupture plane:', validators=[DataRequired()]) 
+    bilateral_model_s2 = StringField('Bilateral model:', validators=[DataRequired()]) 
+    reference_s2 = StringField('Reference:', validators=[DataRequired()]) 
+
+    submit = SubmitField('Сохранить изменения')
 
 class AddEarthquakeForm(FlaskForm):
     eq_date = StringField('Дата:', validators=[DataRequired()])  
@@ -84,7 +96,7 @@ class AddEarthquakeForm(FlaskForm):
     period_range = StringField('Period range, s:', validators=[DataRequired()]) 
     crustal_model = StringField('Crustal model:', validators=[DataRequired()]) 
     residual = StringField('ε:', validators=[DataRequired()]) 
-    magnitude = StringField('Магнитуда', validators=[DataRequired()]) 
+    magnitude = StringField('Magnitude:', validators=[DataRequired()]) 
     moment_0 = StringField('Mo, N m:', validators=[DataRequired()]) 
     h_depth = StringField('h, km:', validators=[DataRequired()]) 
     np1_azm = StringField('Nodal plane 1, azm, deg:', validators=[DataRequired()]) 
@@ -100,8 +112,28 @@ class AddEarthquakeForm(FlaskForm):
     b_axis_azm = StringField('B axis, azm, deg:', validators=[DataRequired()]) 
     b_axis_pl = StringField('B axis, pl, deg:', validators=[DataRequired()]) 
     reference = StringField('Название:', validators=[DataRequired()]) 
+
+    n_s2 =  StringField('N:', validators=[DataRequired()]) 
+    delta_min_s2 =  StringField('Δmin, deg:', validators=[DataRequired()]) 
+    delta_max_s2 = StringField('Δmax, deg:', validators=[DataRequired()]) 
+    period_range_s2 = StringField('Period range, s:', validators=[DataRequired()]) 
+    residual_s2 = StringField('ε:', validators=[DataRequired()]) 
+    moment_0_s2 = StringField('Mo, N m:', validators=[DataRequired()]) 
+    h_depth_s2 = StringField('h, km:', validators=[DataRequired()]) 
+    IntegralCharacteristics_delta_t_s2 = StringField('Δt, s:', validators=[DataRequired()]) 
+    IntegralCharacteristics_l_max_s2 = StringField('lmax, km:', validators=[DataRequired()]) 
+    IntegralCharacteristics_l_min_s2 = StringField('lmin, km:', validators=[DataRequired()]) 
+    IntegralCharacteristics_v_speed_s2 = StringField('v, km/s:', validators=[DataRequired()]) 
+    IntegralCharacteristics_f_1_s2 = StringField('ϕ1, °:', validators=[DataRequired()]) 
+    IntegralCharacteristics_f_v_s2 = StringField('ϕv, °:', validators=[DataRequired()]) 
+    rupture_plane_s2 = StringField('Rupture plane:', validators=[DataRequired()]) 
+    bilateral_model_s2 = StringField('Bilateral model:', validators=[DataRequired()]) 
+    reference_s2 = StringField('Reference:', validators=[DataRequired()]) 
+
+
     
-    submit = SubmitField('Add Earthquake')
+    
+    submit = SubmitField('Добавить землетрясение')
 
 
 def get_db_connection():
@@ -290,7 +322,7 @@ def edit(earthquake_id):
 def add_earthquake():
     form = AddEarthquakeForm()
     if request.method == 'POST':
-        print("Form submitted.")  # Debugging information
+        print("Form submitted.")  
         print("Field1:", form.eq_date.data)
         print("Field2:", form.eq_time.data)
     
@@ -324,7 +356,7 @@ def add_earthquake():
             reference = form.reference.data
             
             
-            print("Form data received:", eq_date, eq_time)  # Debugging information
+            print("Form data received:", eq_date, eq_time)  
             try:
                 conn = get_db_connection()
                 cur = conn.cursor()
@@ -336,7 +368,7 @@ def add_earthquake():
                              crustal_model, residual, magnitude, moment_0, h_depth, np1_azm, np1_dp, np1_slip, np2_azm, 
                              np2_dp, np2_slip, t_axis_azm, t_axis_pl, p_axis_azm, p_axis_pl, b_axis_azm, b_axis_pl, reference))
                 new_id = cur.fetchone()[0]
-                print("New ID generated:", new_id)  # Debugging information
+                print("New ID generated:", new_id)  
                 # Insert into s2 using the new id
                 cur.execute('INSERT INTO s2 (earthquake_id) VALUES (%s)', (new_id,))
                 conn.commit()
@@ -345,13 +377,13 @@ def add_earthquake():
                 flash('New earthquake added successfully')
                 draw_beachballs()
             except Exception as e:
-                print("Error occurred:", e)  # Debugging information
+                print("Error occurred:", e)  
                 flash(f'An error occurred: {e}')
                 if conn:
                     conn.rollback()
             return redirect(url_for('admin'))
         else:
-            print("Form validation failed.")  # Debugging information
-            print("Errors:", form.errors)  # Debugging information
+            print("Form validation failed.")  
+            print("Errors:", form.errors)  
     return render_template('add.html', title='Add Earthquake', form=form)
 

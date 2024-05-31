@@ -2,12 +2,23 @@
 <html>
 <head>
     <title>Edit Earthquake</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/earthquake_detail.css') }}">
+ 
 </head>
 <body>
-    <h1>Edit Earthquake</h1>
+    <h1>Редактирование землетрясения </h1>
+    <a href="{{ url_for('admin') }}">Вернуться к панели администратора</a>
     <form method="post">
         {{ form.hidden_tag() }}
+        <div class="addEditTables">
 
+        <div class="table1">
+            <p class="tableName">
+                 Таблица 1:
+            </p>
 
         <p>
             {{ form.reference.label }}<br>
@@ -114,11 +125,89 @@
             {{ form.b_axis_pl.label }}<br>
             {{ form.b_axis_pl(size=32) }}
         </p>
+    </div>
+    <div class="table2">
+        <p class="tableName">
+            Таблица 2:
+       </p>
+            <p>
+                {{ form.n_s2.label }}<br>
+                {{ form.n_s2(size=32) }}
+            </p>
+            <p>
+                {{ form.delta_min_s2.label }}<br>
+                {{ form.delta_min_s2(size=32) }}
+            </p>
+            <p>
+                {{ form.delta_max_s2.label }}<br>
+                {{ form.delta_max_s2(size=32) }}
+            </p>
+            <p>
+                {{ form.period_range_s2.label }}<br>
+                {{ form.period_range_s2(size=32) }}
+            </p>
+            <p>
+                {{ form.residual_s2.label }}<br>
+                {{ form.residual_s2(size=32) }}
+            </p>
+            <p>
+                {{ form.moment_0_s2.label }}<br>
+                {{ form.moment_0_s2(size=32) }}
+            </p>
+            <p>
+                {{ form.h_depth_s2.label }}<br>
+                {{ form.h_depth_s2(size=32) }}
+            </p>
+            <p>
+                {{ form.IntegralCharacteristics_delta_t_s2.label }}<br>
+                {{ form.IntegralCharacteristics_delta_t_s2(size=32) }}
+            </p>
+            <p>
+                {{ form.IntegralCharacteristics_l_max_s2.label }}<br>
+                {{ form.IntegralCharacteristics_l_max_s2(size=32) }}
+            </p>
+
+            <p>
+                {{ form.IntegralCharacteristics_l_min_s2.label }}<br>
+                {{ form.IntegralCharacteristics_l_min_s2(size=32) }}
+            </p>
+            <p>
+                {{ form.IntegralCharacteristics_v_speed_s2.label }}<br>
+                {{ form.IntegralCharacteristics_v_speed_s2(size=32) }}
+            </p>
+            <p>
+                {{ form.IntegralCharacteristics_f_1_s2.label }}<br>
+                {{ form.IntegralCharacteristics_f_1_s2(size=32) }}
+            </p>
+            <p>
+                {{ form.IntegralCharacteristics_f_v_s2.label }}<br>
+                {{ form.IntegralCharacteristics_f_v_s2(size=32) }}
+            </p>
+            <p>
+                {{ form.rupture_plane_s2.label }}<br>
+                {{ form.rupture_plane_s2(size=32) }}
+            </p>
+            <p>
+                {{ form.bilateral_model_s2.label }}<br>
+                {{ form.bilateral_model_s2(size=32) }}
+            </p>
+            <p>
+                {{ form.reference_s2.label }}<br>
+                {{ form.reference_s2(size=32) }}
+            </p>
+            <p class="makeSure"> Убедитесь, что заполнены все поля таблиц</p>
+
+            <p>{{ form.submit() }}</p>
+
+
+            
+        </div>
+    </div>
       
 
 
-        <p>{{ form.submit() }}</p>
+       
     </form>
-    <a href="{{ url_for('admin') }}">Back to Admin</a>
+    
 </body>
 </html>
