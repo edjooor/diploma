@@ -6,10 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='styles/earthquake_detail.css') }}">
-        <style>
-            
-        </style>
-       
+    
         <script src="https://d3js.org/d3.v6.min.js"></script>
         <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
         <script src="https://d3js.org/topojson.v3.min.js"></script>
@@ -23,10 +20,10 @@
                  
  
 
-        <div>
-            earthquakes:  <a href="{{ url_for('index') }}">Home</a>
+        <div style="margin-top: 10px; margin-left: 15px; ">
+        <a href="{{ url_for('index') }}" style="cursor: pointer; text-decoration: none;">Главная страница</a>
         </div>
-        <hr>
+        <hr style="margin-top: 10px;">
         {% block content %}{% endblock %}
         
        

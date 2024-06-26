@@ -8,7 +8,7 @@ from flask_login import LoginManager, UserMixin, login_user, login_required, log
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, FloatField
 from wtforms.validators import DataRequired
-
+import mysql.connector
 
 
 
@@ -136,15 +136,22 @@ class AddEarthquakeForm(FlaskForm):
     submit = SubmitField('Добавить землетрясение')
 
 
+# def get_db_connection():
+#     conn = psycopg2.connect(
+#         host='localhost',
+#         database='earthquakes_map',
+#         user='postgres',
+#         password='1234'
+#     )
+#     return conn
 def get_db_connection():
-    conn = psycopg2.connect(
+    conn = mysql.connector.connect(
         host='localhost',
-        database='earthquakes_map',
-        user='postgres',
-        password='1234'
+        database='earthquakes',
+        user='root',
+        password='password'
     )
     return conn
-
 def draw_beachballs():    
     base_path = os.path.abspath(os.path.dirname(__file__))
     pathto_dir = os.path.join(base_path, 'static', 'beachballs')
@@ -165,6 +172,7 @@ def draw_beachballs():
             facecolor='k',
             width=400,
             axes=ax,
+            
             xy=(0.5, 0.5)
         )
         ax.add_collection(bb)
@@ -186,8 +194,10 @@ def index():
     cur.execute('SELECT * FROM s1;')
     earthquakes_S1 = cur.fetchall()
     cur.close()
-    conn.close()  
-    return render_template('index.html', title='Earthquake map', earthquakes_S1=earthquakes_S1)
+    conn.close()
+    earthquake_detail_url = url_for('earthquake_detail', earthquake_id=0).rsplit('/', 1)[0] + '/'
+    return render_template('index.html', earthquakes_S1=earthquakes_S1, earthquake_detail_url=earthquake_detail_url)  
+    # return render_template('index.html', title='Earthquake map', earthquakes_S1=earthquakes_S1)
 
 @app.route('/earthquake/<int:earthquake_id>')
 def earthquake_detail(earthquake_id):

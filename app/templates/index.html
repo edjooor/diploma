@@ -2,49 +2,31 @@
 
 {% block content %}
 <h1>Earthquakes map</h1>
+<div style="height: 100px; ">
+
+  
+    <select id="sortSelector" style="height: 30px;">
+        <option value="name">Сортировать по названию</option>
+        <option value="datedown">Сортировать по дате(сначала последние)</option>
+        <option value="dateup">Сортировать по дате(сначала самые ранние)</option>
+        <option value="magnitudelow">Сортировать по возрастанию магнитуды</option>
+        <option value="magnitudehigh">Сортировать по убыванию магнитуды</option>
+    </select>
+</div>
 <div id="mapPage">
-    <div id="earthquake_data" style="display: none;"> {{earthquakes_S1}}</div>
    
 
-    <div id="mapItemsList">
-        {% for earthquake in earthquakes_S1 %}
-        <div id="listItem">
-        
-            <p>
-                <b>{{ earthquake[26] }}</b>
-            </br>
-            Дата:
-                <b>{{ earthquake[1] }}</b>
-                </br>
-                Широта:
-                <b>{{ earthquake[3] }}</b>
-                </br>
-                Долгота:
-                <b>{{ earthquake[4] }}</b>
-                </br>
-                Mw:
-                <b>{{ earthquake[11] }}</b>
-            </br>
-                M0:
-                <b>{{ earthquake[12] }}</b>
-                </br>
+    <div id="mapItemsList"  data-earthquakes='{{ earthquakes_S1 | tojson | safe }}'
+    data-earthquake-detail-url='{{ earthquake_detail_url }}'>
+   
 
-            </p>
-            <a href="{{ url_for('earthquake_detail', earthquake_id=earthquake[0]) }}" id="moreInfo">Подробнее</a>
-
-
+            </div>
        
-        </div>
 
 
-
-
-        {% endfor %}
-
-    </div>
     <div class="globes">
         <div class="controls">
-            <button id="zoomIn">+</button>
+            <button id="zoomIn" >+</button>
             <button id="zoomOut">-</button>
         </div>
         <canvas id="globe"></canvas>
@@ -54,6 +36,7 @@
 
 
 </div>
+<script src="{{ url_for('static', filename='scripts/list_show.js') }}"></script>
 <script src="{{ url_for('static', filename='scripts/globe_show.js') }}"></script>
 
 {% endblock %}
