@@ -211,6 +211,17 @@ def earthquake_detail(earthquake_id):
         return "Earthquake not found", 404
     return render_template('earthquake_detail.html', earthquake=earthquake)
 
+@app.route('/earthquake2nd/<int:earthquake_id>')
+def earthquake_detail2(earthquake_id):
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute('SELECT * FROM s2 WHERE id = %s;', (earthquake_id,))
+    earthquake = cur.fetchone()
+    cur.close()
+    conn.close()
+    if earthquake is None:
+        return "Earthquake not found", 404
+    return render_template('earthquake_detail2.html', earthquake=earthquake)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

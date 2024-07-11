@@ -2,8 +2,9 @@
 // earthquakesJS = earthquakesJS.replaceAll('(', '[');
 // earthquakesJS = earthquakesJS.replaceAll(')', ']');
 // earthquakesJS = earthquakesJS.replaceAll("'", '"');
-const jsonEarth = JSON.parse(mapItemsList.getAttribute('data-earthquakes'));
 // let jsonEarth = JSON.parse(earthquakesJS.replace(/None/g, 'null'));
+const jsonEarth = JSON.parse(mapItemsList.getAttribute('data-earthquakes'));
+
 
 const width = window.innerWidth * 0.6;
 const height = Math.min(width, 720);

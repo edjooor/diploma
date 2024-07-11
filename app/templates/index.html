@@ -2,10 +2,34 @@
 
 {% block content %}
 <h1>Earthquakes map</h1>
-<div style="height: 100px; ">
+<div style="height: 200px; display: flex; flex-direction: column; width: 60%;">
+    <div class="filterAtt">
+        <label for="minMagnitude">Минимальная магнитуда:</label>
+        <input type="number" id="minMagnitude" step="0.1" value="0">
 
-  
-    <select id="sortSelector" style="height: 30px;">
+
+        <label for="maxMagnitude">Максимальная магнитуда:</label>
+        <input type="number" id="maxMagnitude" step="0.1" value="10">
+    </div>
+
+    <div class="filterAtt">
+        <label for="minDate">Минимальная дата:</label>
+        <input type="date" id="minDate">
+
+        <label for="maxDate">Максимальная дата:</label>
+        <input type="date" id="maxDate">
+    </div>
+    <div class="filterAtt">
+
+        <label for="minDepth">Минимальная глубина:</label>
+        <input type="number" id="minDepth" step="1" value="0">
+
+        <label for="maxDepth">Максимальная глубина:</label>
+        <input type="number" id="maxDepth" step="1" value="100">
+    </div>
+
+
+    <select id="sortSelector" style="height: 30px; width: 70%;">
         <option value="name">Сортировать по названию</option>
         <option value="datedown">Сортировать по дате(сначала последние)</option>
         <option value="dateup">Сортировать по дате(сначала самые ранние)</option>
@@ -14,24 +38,26 @@
     </select>
 </div>
 <div id="mapPage">
-   
 
-    <div id="mapItemsList"  data-earthquakes='{{ earthquakes_S1 | tojson | safe }}'
-    data-earthquake-detail-url='{{ earthquake_detail_url }}'>
-   
 
-            </div>
+    <div id="mapItemsList" data-earthquakes='{{ earthquakes_S1 | tojson | safe }}'
+        data-earthquake-detail-url='{{ earthquake_detail_url }}'
+        data-earthquake-detail-url2='{{ earthquake_detail_url2 }}'>
        
+
+
+    </div>
+
 
 
     <div class="globes">
         <div class="controls">
-            <button id="zoomIn" >+</button>
+            <button id="zoomIn">+</button>
             <button id="zoomOut">-</button>
         </div>
         <canvas id="globe"></canvas>
         <div class="tooltip" id="tooltip"></div>
-        
+
     </div>
 
 
