@@ -196,7 +196,9 @@ def index():
     cur.close()
     conn.close()
     earthquake_detail_url = url_for('earthquake_detail', earthquake_id=0).rsplit('/', 1)[0] + '/'
-    return render_template('index.html', earthquakes_S1=earthquakes_S1, earthquake_detail_url=earthquake_detail_url)  
+    earthquake_detail2_url = url_for('earthquake_detail2', earthquake_id=0).rsplit('/', 1)[0] + '/'
+    
+    return render_template('index.html', earthquakes_S1=earthquakes_S1, earthquake_detail_url=earthquake_detail_url, earthquake_detail2_url = earthquake_detail2_url)  
     # return render_template('index.html', title='Earthquake map', earthquakes_S1=earthquakes_S1)
 
 @app.route('/earthquake/<int:earthquake_id>')
@@ -218,10 +220,15 @@ def earthquake_detail2(earthquake_id):
     cur.execute('SELECT * FROM s2 WHERE earthquake_id = %s;', (earthquake_id,))
     earthquake = cur.fetchone()
     cur.close()
+    cur2 = conn.cursor()
+    cur2.execute('SELECT reference FROM s1 WHERE id = %s;', (earthquake_id,))
+    earthquake_name = cur2.fetchone()
+    cur2.close()
     conn.close()
+    
     if earthquake is None:
         return "Earthquake not found", 404
-    return render_template('earthquake_detail2.html', earthquake=earthquake)
+    return render_template('earthquake_detail2.html', earthquake=earthquake, earthquake_name = earthquake_name)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

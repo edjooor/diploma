@@ -1,18 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>{{ earthquake[26] }}</h1>
+    <h1>{{ earthquake_name }}</h1>
     <div id="earthquake_data_id" style="display: none;">{{earthquake[0]}}</div>
     <div class="detail">
 
     
     <div class="detail_text"> 
+       
     
     <p>Дата: <b>{{ earthquake[1] }}</b></p>
     <p>Время: <b>{{ earthquake[2] }}</b></p>
     <p>Широта: <b>{{ earthquake[3] }}</b></p>
     <p>Долгота: <b>{{ earthquake[4] }}</b></p>
-    <!-- <p>N: <b>{{ earthquake[5] }}</b></p>
+   <p>N: <b>{{ earthquake[5] }}</b></p>
     <p>Δmin, deg: <b>{{ earthquake[6] }}</b></p>
     <p>Δmax, deg: <b>{{ earthquake[7] }}</b></p>
     <p>Period range, s: <b>{{ earthquake[8] }}</b></p>
@@ -45,6 +46,7 @@
 
 
 </div>
+ <!-- 
     <div class="detail_visualization">
         <div id="image-container"></div>
     </div> -->

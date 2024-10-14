@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const mapItemsList = document.getElementById('mapItemsList');
     const earthquakes = JSON.parse(mapItemsList.getAttribute('data-earthquakes'));
     const earthquakeDetailUrl = mapItemsList.getAttribute('data-earthquake-detail-url');
-    const earthquakeDetailUrl2 = mapItemsList.getAttribute('data-earthquake-detail-url2');
-    console.log(earthquakes)
+    const earthquakeDetailUrl2 = mapItemsList.getAttribute('data-earthquake-detail2-url');
+
 
     function createListItem(earthquake) {
         const div = document.createElement('div');
@@ -18,11 +18,15 @@ document.addEventListener('DOMContentLoaded', function() {
         link.href = earthquakeDetailUrl + earthquake[0];
         link.className = 'moreInfo';
         link.textContent = 'Подробнее';
+        // console.log(earthquakeDetailUrl);
+
+
         
         const link2 = document.createElement('a');
         link2.href = earthquakeDetailUrl2 + earthquake[0];
         link2.className = 'moreInfo2';
         link2.textContent = 'Вторые моменты';
+        console.log(earthquakeDetailUrl2);
 
         div.appendChild(link);
         div.appendChild(link2);
