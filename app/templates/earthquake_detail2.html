@@ -12,7 +12,7 @@
     <p>Время: <b>{{ earthquake[2] }}</b></p>
     <p>Широта: <b>{{ earthquake[3] }}</b></p>
     <p>Долгота: <b>{{ earthquake[4] }}</b></p>
-    <p>N: <b>{{ earthquake[5] }}</b></p>
+    <!-- <p>N: <b>{{ earthquake[5] }}</b></p>
     <p>Δmin, deg: <b>{{ earthquake[6] }}</b></p>
     <p>Δmax, deg: <b>{{ earthquake[7] }}</b></p>
     <p>Period range, s: <b>{{ earthquake[8] }}</b></p>
@@ -47,9 +47,9 @@
 </div>
     <div class="detail_visualization">
         <div id="image-container"></div>
-    </div>
+    </div> -->
 
 </div>
-<script src="{{ url_for('static', filename='scripts/surface_drawer.js') }}"></script>
-<script src="{{ url_for('static', filename='scripts/beachball_show.js') }}"></script>
+<!-- <script src="{{ url_for('static', filename='scripts/surface_drawer.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/beachball_show.js') }}"></script> -->
     {% endblock %}

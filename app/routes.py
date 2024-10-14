@@ -39,96 +39,96 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Login')
 
 class EditForm(FlaskForm):
-    eq_date = StringField('Дата:', validators=[DataRequired()])  
-    eq_time = StringField('Время:', validators=[DataRequired()]) 
-    lattitude_deg = StringField('Широта:', validators=[DataRequired()]) 
-    longtitude_deg = StringField('Долгота:', validators=[DataRequired()]) 
-    n =  StringField('N:', validators=[DataRequired()]) 
-    delta_min =  StringField('Δmin, deg:', validators=[DataRequired()]) 
-    delta_max = StringField('Δmax, deg:', validators=[DataRequired()]) 
-    period_range = StringField('Period range, s:', validators=[DataRequired()]) 
-    crustal_model = StringField('Crustal model:', validators=[DataRequired()]) 
-    residual = StringField('ε:', validators=[DataRequired()]) 
-    magnitude = StringField('Magnitude:', validators=[DataRequired()]) 
-    moment_0 = StringField('Mo, N m:', validators=[DataRequired()]) 
-    h_depth = StringField('h, km:', validators=[DataRequired()]) 
-    np1_azm = StringField('Nodal plane 1, azm, deg:', validators=[DataRequired()]) 
-    np1_dp = StringField('Nodal plane 1, dp, deg:', validators=[DataRequired()]) 
-    np1_slip = StringField('Nodal plane 1, slip,deg:', validators=[DataRequired()]) 
-    np2_azm = StringField('Nodal plane 2, azm, deg:', validators=[DataRequired()]) 
-    np2_dp = StringField('Nodal plane 2, dp, deg:', validators=[DataRequired()]) 
-    np2_slip = StringField('Nodal plane 2, slip, deg:', validators=[DataRequired()]) 
-    t_axis_azm = StringField('T axis, azm, deg:', validators=[DataRequired()]) 
-    t_axis_pl = StringField('T axis, pl, deg:', validators=[DataRequired()]) 
-    p_axis_azm = StringField('P axis, azm, deg:', validators=[DataRequired()]) 
-    p_axis_pl = StringField('P axis, pl, deg:', validators=[DataRequired()]) 
-    b_axis_azm = StringField('B axis, azm, deg:', validators=[DataRequired()]) 
-    b_axis_pl = StringField('B axis, pl, deg:', validators=[DataRequired()]) 
-    reference = StringField('Название:', validators=[DataRequired()]) 
+    eq_date = StringField('Дата:')  
+    eq_time = StringField('Время:') 
+    lattitude_deg = StringField('Широта:') 
+    longtitude_deg = StringField('Долгота:') 
+    n =  StringField('N:') 
+    delta_min =  StringField('Δmin, deg:') 
+    delta_max = StringField('Δmax, deg:') 
+    period_range = StringField('Period range, s:') 
+    crustal_model = StringField('Crustal model:') 
+    residual = StringField('ε:') 
+    magnitude = StringField('Magnitude:') 
+    moment_0 = StringField('Mo, N m:') 
+    h_depth = StringField('h, km:') 
+    np1_azm = StringField('Nodal plane 1, azm, deg:') 
+    np1_dp = StringField('Nodal plane 1, dp, deg:') 
+    np1_slip = StringField('Nodal plane 1, slip,deg:') 
+    np2_azm = StringField('Nodal plane 2, azm, deg:') 
+    np2_dp = StringField('Nodal plane 2, dp, deg:') 
+    np2_slip = StringField('Nodal plane 2, slip, deg:') 
+    t_axis_azm = StringField('T axis, azm, deg:') 
+    t_axis_pl = StringField('T axis, pl, deg:') 
+    p_axis_azm = StringField('P axis, azm, deg:') 
+    p_axis_pl = StringField('P axis, pl, deg:') 
+    b_axis_azm = StringField('B axis, azm, deg:') 
+    b_axis_pl = StringField('B axis, pl, deg:') 
+    reference = StringField('Название:') 
 
-    n_s2 =  StringField('N:', validators=[DataRequired()]) 
-    delta_min_s2 =  StringField('Δmin, deg:', validators=[DataRequired()]) 
-    delta_max_s2 = StringField('Δmax, deg:', validators=[DataRequired()]) 
-    period_range_s2 = StringField('Period range, s:', validators=[DataRequired()]) 
-    residual_s2 = StringField('ε:', validators=[DataRequired()]) 
-    moment_0_s2 = StringField('Mo, N m:', validators=[DataRequired()]) 
-    h_depth_s2 = StringField('h, km:', validators=[DataRequired()]) 
-    IntegralCharacteristics_delta_t_s2 = StringField('Δt, s:', validators=[DataRequired()]) 
-    IntegralCharacteristics_l_max_s2 = StringField('lmax, km:', validators=[DataRequired()]) 
-    IntegralCharacteristics_l_min_s2 = StringField('lmin, km:', validators=[DataRequired()]) 
-    IntegralCharacteristics_v_speed_s2 = StringField('v, km/s:', validators=[DataRequired()]) 
-    IntegralCharacteristics_f_1_s2 = StringField('ϕ1, °:', validators=[DataRequired()]) 
-    IntegralCharacteristics_f_v_s2 = StringField('ϕv, °:', validators=[DataRequired()]) 
-    rupture_plane_s2 = StringField('Rupture plane:', validators=[DataRequired()]) 
-    bilateral_model_s2 = StringField('Bilateral model:', validators=[DataRequired()]) 
-    reference_s2 = StringField('Reference:', validators=[DataRequired()]) 
+    n_s2 =  StringField('N:') 
+    delta_min_s2 =  StringField('Δmin, deg:') 
+    delta_max_s2 = StringField('Δmax, deg:') 
+    period_range_s2 = StringField('Period range, s:') 
+    residual_s2 = StringField('ε:') 
+    moment_0_s2 = StringField('Mo, N m:') 
+    h_depth_s2 = StringField('h, km:') 
+    IntegralCharacteristics_delta_t_s2 = StringField('Δt, s:') 
+    IntegralCharacteristics_l_max_s2 = StringField('lmax, km:') 
+    IntegralCharacteristics_l_min_s2 = StringField('lmin, km:') 
+    IntegralCharacteristics_v_speed_s2 = StringField('v, km/s:') 
+    IntegralCharacteristics_f_1_s2 = StringField('ϕ1, °:') 
+    IntegralCharacteristics_f_v_s2 = StringField('ϕv, °:') 
+    rupture_plane_s2 = StringField('Rupture plane:') 
+    bilateral_model_s2 = StringField('Bilateral model:') 
+    reference_s2 = StringField('Reference:') 
 
     submit = SubmitField('Сохранить изменения')
 
 class AddEarthquakeForm(FlaskForm):
-    eq_date = StringField('Дата:', validators=[DataRequired()])  
-    eq_time = StringField('Время:', validators=[DataRequired()]) 
-    lattitude_deg = StringField('Широта:', validators=[DataRequired()]) 
-    longtitude_deg = StringField('Долгота:', validators=[DataRequired()]) 
-    n =  StringField('N:', validators=[DataRequired()]) 
-    delta_min =  StringField('Δmin, deg:', validators=[DataRequired()]) 
-    delta_max = StringField('Δmax, deg:', validators=[DataRequired()]) 
-    period_range = StringField('Period range, s:', validators=[DataRequired()]) 
-    crustal_model = StringField('Crustal model:', validators=[DataRequired()]) 
-    residual = StringField('ε:', validators=[DataRequired()]) 
-    magnitude = StringField('Magnitude:', validators=[DataRequired()]) 
-    moment_0 = StringField('Mo, N m:', validators=[DataRequired()]) 
-    h_depth = StringField('h, km:', validators=[DataRequired()]) 
-    np1_azm = StringField('Nodal plane 1, azm, deg:', validators=[DataRequired()]) 
-    np1_dp = StringField('Nodal plane 1, dp, deg:', validators=[DataRequired()]) 
-    np1_slip = StringField('Nodal plane 1, slip,deg:', validators=[DataRequired()]) 
-    np2_azm = StringField('Nodal plane 2, azm, deg:', validators=[DataRequired()]) 
-    np2_dp = StringField('Nodal plane 2, dp, deg:', validators=[DataRequired()]) 
-    np2_slip = StringField('Nodal plane 2, slip, deg:', validators=[DataRequired()]) 
-    t_axis_azm = StringField('T axis, azm, deg:', validators=[DataRequired()]) 
-    t_axis_pl = StringField('T axis, pl, deg:', validators=[DataRequired()]) 
-    p_axis_azm = StringField('P axis, azm, deg:', validators=[DataRequired()]) 
-    p_axis_pl = StringField('P axis, pl, deg:', validators=[DataRequired()]) 
-    b_axis_azm = StringField('B axis, azm, deg:', validators=[DataRequired()]) 
-    b_axis_pl = StringField('B axis, pl, deg:', validators=[DataRequired()]) 
-    reference = StringField('Название:', validators=[DataRequired()]) 
+    eq_date = StringField('Дата:')  
+    eq_time = StringField('Время:') 
+    lattitude_deg = StringField('Широта:') 
+    longtitude_deg = StringField('Долгота:') 
+    n =  StringField('N:') 
+    delta_min =  StringField('Δmin, deg:') 
+    delta_max = StringField('Δmax, deg:') 
+    period_range = StringField('Period range, s:') 
+    crustal_model = StringField('Crustal model:') 
+    residual = StringField('ε:') 
+    magnitude = StringField('Magnitude:') 
+    moment_0 = StringField('Mo, N m:') 
+    h_depth = StringField('h, km:') 
+    np1_azm = StringField('Nodal plane 1, azm, deg:') 
+    np1_dp = StringField('Nodal plane 1, dp, deg:') 
+    np1_slip = StringField('Nodal plane 1, slip,deg:') 
+    np2_azm = StringField('Nodal plane 2, azm, deg:') 
+    np2_dp = StringField('Nodal plane 2, dp, deg:') 
+    np2_slip = StringField('Nodal plane 2, slip, deg:') 
+    t_axis_azm = StringField('T axis, azm, deg:') 
+    t_axis_pl = StringField('T axis, pl, deg:') 
+    p_axis_azm = StringField('P axis, azm, deg:') 
+    p_axis_pl = StringField('P axis, pl, deg:') 
+    b_axis_azm = StringField('B axis, azm, deg:') 
+    b_axis_pl = StringField('B axis, pl, deg:') 
+    reference = StringField('Название:') 
 
-    n_s2 =  StringField('N:', validators=[DataRequired()]) 
-    delta_min_s2 =  StringField('Δmin, deg:', validators=[DataRequired()]) 
-    delta_max_s2 = StringField('Δmax, deg:', validators=[DataRequired()]) 
-    period_range_s2 = StringField('Period range, s:', validators=[DataRequired()]) 
-    residual_s2 = StringField('ε:', validators=[DataRequired()]) 
-    moment_0_s2 = StringField('Mo, N m:', validators=[DataRequired()]) 
-    h_depth_s2 = StringField('h, km:', validators=[DataRequired()]) 
-    IntegralCharacteristics_delta_t_s2 = StringField('Δt, s:', validators=[DataRequired()]) 
-    IntegralCharacteristics_l_max_s2 = StringField('lmax, km:', validators=[DataRequired()]) 
-    IntegralCharacteristics_l_min_s2 = StringField('lmin, km:', validators=[DataRequired()]) 
-    IntegralCharacteristics_v_speed_s2 = StringField('v, km/s:', validators=[DataRequired()]) 
-    IntegralCharacteristics_f_1_s2 = StringField('ϕ1, °:', validators=[DataRequired()]) 
-    IntegralCharacteristics_f_v_s2 = StringField('ϕv, °:', validators=[DataRequired()]) 
-    rupture_plane_s2 = StringField('Rupture plane:', validators=[DataRequired()]) 
-    bilateral_model_s2 = StringField('Bilateral model:', validators=[DataRequired()]) 
-    reference_s2 = StringField('Reference:', validators=[DataRequired()]) 
+    n_s2 =  StringField('N:') 
+    delta_min_s2 =  StringField('Δmin, deg:') 
+    delta_max_s2 = StringField('Δmax, deg:') 
+    period_range_s2 = StringField('Period range, s:') 
+    residual_s2 = StringField('ε:') 
+    moment_0_s2 = StringField('Mo, N m:') 
+    h_depth_s2 = StringField('h, km:') 
+    IntegralCharacteristics_delta_t_s2 = StringField('Δt, s:') 
+    IntegralCharacteristics_l_max_s2 = StringField('lmax, km:') 
+    IntegralCharacteristics_l_min_s2 = StringField('lmin, km:') 
+    IntegralCharacteristics_v_speed_s2 = StringField('v, km/s:') 
+    IntegralCharacteristics_f_1_s2 = StringField('ϕ1, °:') 
+    IntegralCharacteristics_f_v_s2 = StringField('ϕv, °:') 
+    rupture_plane_s2 = StringField('Rupture plane:') 
+    bilateral_model_s2 = StringField('Bilateral model:') 
+    reference_s2 = StringField('Reference:') 
 
 
     
@@ -215,7 +215,7 @@ def earthquake_detail(earthquake_id):
 def earthquake_detail2(earthquake_id):
     conn = get_db_connection()
     cur = conn.cursor()
-    cur.execute('SELECT * FROM s2 WHERE id = %s;', (earthquake_id,))
+    cur.execute('SELECT * FROM s2 WHERE earthquake_id = %s;', (earthquake_id,))
     earthquake = cur.fetchone()
     cur.close()
     conn.close()
@@ -258,6 +258,7 @@ def admin():
 @login_required
 def edit(earthquake_id):
     form = EditForm()
+    
     if form.validate_on_submit():
         eq_date = form.eq_date.data
         eq_time = form.eq_time.data
@@ -285,29 +286,76 @@ def edit(earthquake_id):
         b_axis_azm = form.b_axis_azm.data
         b_axis_pl = form.b_axis_pl.data
         reference = form.reference.data
+        
+        n_s2 =  form.n_s2.data
+        delta_min_s2 =  form.delta_min_s2.data
+        delta_max_s2 = form.delta_min_s2.data
+        period_range_s2 = form.period_range_s2.data
+        residual_s2 = form. residual_s2.data
+        moment_0_s2 = form. moment_0_s2.data
+        h_depth_s2 = form. h_depth_s2.data
+        IntegralCharacteristics_delta_t_s2 = form.IntegralCharacteristics_delta_t_s2.data
+        IntegralCharacteristics_l_max_s2 = form.IntegralCharacteristics_l_max_s2.data
+        IntegralCharacteristics_l_min_s2 = form.IntegralCharacteristics_l_min_s2.data
+        IntegralCharacteristics_v_speed_s2 = form.IntegralCharacteristics_v_speed_s2.data
+        IntegralCharacteristics_f_1_s2 = form.IntegralCharacteristics_f_1_s2.data
+        IntegralCharacteristics_f_v_s2 = form.IntegralCharacteristics_f_v_s2.data
+        rupture_plane_s2 = form.rupture_plane_s2.data
+        bilateral_model_s2 = form.bilateral_model_s2.data
+        reference_s2 = form.reference_s2.data 
+        
+        # Отладочная информация
+        print("Обновляем данные:", eq_date, eq_time, lattitude_deg, longtitude_deg, n, delta_min, delta_max, 
+              period_range, crustal_model, residual, magnitude, moment_0, h_depth, np1_azm, np1_dp, 
+              np1_slip, np2_azm, np2_dp, np2_slip, t_axis_azm, t_axis_pl, p_axis_azm, p_axis_pl, 
+              b_axis_azm, b_axis_pl, reference, earthquake_id)
+        
+        try:
+            conn = get_db_connection()
+            cur = conn.cursor(buffered=True)
 
-        conn = get_db_connection()
-        cur = conn.cursor()
-        cur.execute('UPDATE s1 SET eq_date = %s, eq_time = %s, lattitude_deg = %s, longtitude_deg = %s, n = %s, delta_min = %s, delta_max = %s, period_range = %s, crustal_model = %s, residual = %s, magnitude = %s, moment_0 = %s, h_depth = %s, np1_azm = %s, np1_dp = %s, np1_slip = %s, np2_azm = %s, np2_dp = %s,	np2_slip = %s, t_axis_azm = %s, t_axis_pl = %s, p_axis_azm = %s, p_axis_pl = %s, b_axis_azm = %s, b_axis_pl = %s, reference = %s, WHERE id = %s', (eq_date, eq_time, lattitude_deg, longtitude_deg, n, delta_min, delta_max, period_range, 
-                             crustal_model, residual, magnitude, moment_0, h_depth, np1_azm, np1_dp, np1_slip, np2_azm, 
-                             np2_dp, np2_slip, t_axis_azm, t_axis_pl, p_axis_azm, p_axis_pl, b_axis_azm, b_axis_pl, reference, earthquake_id))
-        conn.commit()
-        cur.close()
-        conn.close()
-        flash('Changes saved successfully')
-        draw_beachballs()
+            # Обновление таблицы s1
+            cur.execute('UPDATE s1 SET eq_date = %s, eq_time = %s, lattitude_deg = %s, longtitude_deg = %s, n = %s, delta_min = %s, delta_max = %s, period_range = %s, crustal_model = %s, residual = %s, magnitude = %s, moment_0 = %s, h_depth = %s, np1_azm = %s, np1_dp = %s, np1_slip = %s, np2_azm = %s, np2_dp = %s, np2_slip = %s, t_axis_azm = %s, t_axis_pl = %s, p_axis_azm = %s, p_axis_pl = %s, b_axis_azm = %s, b_axis_pl = %s, reference = %s WHERE id = %s', 
+                        (eq_date, eq_time, lattitude_deg, longtitude_deg, n, delta_min, delta_max, period_range, 
+                         crustal_model, residual, magnitude, moment_0, h_depth, np1_azm, np1_dp, np1_slip, np2_azm, 
+                         np2_dp, np2_slip, t_axis_azm, t_axis_pl, p_axis_azm, p_axis_pl, b_axis_azm, b_axis_pl, reference, earthquake_id))
+
+            # Обновление таблицы s2
+            cur.execute('UPDATE s2 SET N = %s, Delta_MIN = %s, Delta_MAX = %s, Period_Range = %s, Residual = %s, Moment_0 = %s, h_depth = %s, Delta_t = %s, l_MAX = %s, l_MIN = %s, V_speed = %s, F_1 = %s, F_v = %s, Rupture_plane = %s, Bilateral_model = %s, Reference = %s WHERE earthquake_id = %s', 
+                        (n_s2, delta_min_s2, delta_max_s2, period_range_s2, residual_s2, moment_0_s2, h_depth_s2, IntegralCharacteristics_delta_t_s2, 
+                         IntegralCharacteristics_l_max_s2, IntegralCharacteristics_l_min_s2, IntegralCharacteristics_v_speed_s2, IntegralCharacteristics_f_1_s2, IntegralCharacteristics_f_v_s2, rupture_plane_s2, bilateral_model_s2, reference_s2, earthquake_id))
+
+            conn.commit()
+            flash('Changes saved successfully')
+            draw_beachballs()
+        except Exception as e:
+            print("Ошибка при обновлении данных:", e)
+            flash(f'An error occurred: {e}')
+            conn.rollback()
+        finally:
+            cur.close()
+            conn.close()
+        
         return redirect(url_for('admin'))
     
+    # Если форма не была отправлена, заполняем поля формы значениями из базы
     conn = get_db_connection()
     cur = conn.cursor()
     cur.execute('SELECT * FROM s1 WHERE id = %s;', (earthquake_id,))
     earthquake = cur.fetchone()
     cur.close()
     conn.close()
+    conn2 = get_db_connection()
+    cur2 = conn2.cursor()
+    cur2.execute('SELECT * FROM s2 WHERE earthquake_id = %s;', (earthquake_id,))
+    earthquake2 = cur2.fetchone()
+    cur2.close()
+    conn2.close()
     
     if earthquake is None:
         return "Earthquake not found", 404
     
+    # Заполнение формы данными из базы
     form.eq_date.data = earthquake[1]  
     form.eq_time.data = earthquake[2]  
     form.lattitude_deg.data = earthquake[3]  
@@ -334,9 +382,27 @@ def edit(earthquake_id):
     form.b_axis_azm.data = earthquake[24]  
     form.b_axis_pl.data = earthquake[25]  
     form.reference.data = earthquake[26]  
-
     
+    form.n_s2.data = earthquake2[1]
+    form.delta_min_s2.data = earthquake2[2]
+    form.delta_min_s2.data= earthquake2[3]
+    form.period_range_s2.data= earthquake2[4]
+    form.residual_s2.data= earthquake2[5]
+    form.moment_0_s2.data= earthquake2[6]
+    form.h_depth_s2.data= earthquake2[7]
+    form.IntegralCharacteristics_delta_t_s2.data= earthquake2[8]
+    form.IntegralCharacteristics_l_max_s2.data= earthquake2[9]
+    form.IntegralCharacteristics_l_min_s2.data= earthquake2[10]
+    form.IntegralCharacteristics_v_speed_s2.data= earthquake2[11]
+    form.IntegralCharacteristics_f_1_s2.data= earthquake2[12]
+    form.IntegralCharacteristics_f_v_s2.data= earthquake2[13]
+    form.rupture_plane_s2.data= earthquake2[14]
+    form.bilateral_model_s2.data= earthquake2[15]
+    form.reference_s2.data = earthquake2[16]
+
     return render_template('edit.html', title='Edit Earthquake', form=form)
+
+
 
 @app.route('/add', methods=['GET', 'POST'])
 @login_required
@@ -348,7 +414,8 @@ def add_earthquake():
         print("Field2:", form.eq_time.data)
     
         
-        if form.validate_on_submit():
+        if form.validate_on_submit():  
+
             eq_date = form.eq_date.data
             eq_time = form.eq_time.data
             lattitude_deg = form.lattitude_deg.data
@@ -376,22 +443,45 @@ def add_earthquake():
             b_axis_pl = form.b_axis_pl.data
             reference = form.reference.data
             
+            n_s2 =  form.n_s2.data
+            delta_min_s2 =  form.delta_min_s2.data
+            delta_max_s2 = form.delta_min_s2.data
+            period_range_s2 = form.period_range_s2.data
+            residual_s2 = form.residual_s2.data
+            moment_0_s2 = form.moment_0_s2.data
+            h_depth_s2 = form.h_depth_s2.data
+            IntegralCharacteristics_delta_t_s2 = form.IntegralCharacteristics_delta_t_s2.data
+            IntegralCharacteristics_l_max_s2 = form.IntegralCharacteristics_l_max_s2.data
+            IntegralCharacteristics_l_min_s2 = form.IntegralCharacteristics_l_min_s2.data
+            IntegralCharacteristics_v_speed_s2 = form.IntegralCharacteristics_v_speed_s2.data
+            IntegralCharacteristics_f_1_s2 = form.IntegralCharacteristics_f_1_s2.data
+            IntegralCharacteristics_f_v_s2 = form.IntegralCharacteristics_f_v_s2.data
+            rupture_plane_s2 = form.rupture_plane_s2.data
+            bilateral_model_s2 = form.bilateral_model_s2.data
+            reference_s2 = form.reference_s2.data 
             
-            print("Form data received:", eq_date, eq_time)  
+            
+            
+ 
             try:
                 conn = get_db_connection()
                 cur = conn.cursor()
-                get_id = cur.execute('SELECT MAX(id) FROM s1;')
-                print(cur.execute('SELECT MAX(id) FROM s1;'))
-                # Insert into s1
-                cur.execute('INSERT INTO s1 (eq_date, eq_time,lattitude_deg, longtitude_deg, n, delta_min, delta_max, period_range, crustal_model, residual, magnitude, moment_0, h_depth, np1_azm, np1_dp, np1_slip, np2_azm, np2_dp,	np2_slip, t_axis_azm, t_axis_pl, p_axis_azm, p_axis_pl,	b_axis_azm,	b_axis_pl, reference) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING id',
-                            (eq_date, eq_time, lattitude_deg, longtitude_deg, n, delta_min, delta_max, period_range, 
-                             crustal_model, residual, magnitude, moment_0, h_depth, np1_azm, np1_dp, np1_slip, np2_azm, 
-                             np2_dp, np2_slip, t_axis_azm, t_axis_pl, p_axis_azm, p_axis_pl, b_axis_azm, b_axis_pl, reference))
-                new_id = cur.fetchone()[0]
-                print("New ID generated:", new_id)  
-                # Insert into s2 using the new id
-                cur.execute('INSERT INTO s2 (earthquake_id) VALUES (%s)', (new_id,))
+
+                cur.execute(
+        'INSERT INTO s1 (eq_date, eq_time, lattitude_deg, longtitude_deg, n, delta_min, delta_max, period_range, crustal_model, residual, magnitude, moment_0, h_depth, np1_azm, np1_dp, np1_slip, np2_azm, np2_dp, np2_slip, t_axis_azm, t_axis_pl, p_axis_azm, p_axis_pl, b_axis_azm, b_axis_pl, reference) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)',
+        (eq_date, eq_time, lattitude_deg, longtitude_deg, n, delta_min, delta_max, period_range,
+         crustal_model, residual, magnitude, moment_0, h_depth, np1_azm, np1_dp, np1_slip, np2_azm,
+         np2_dp, np2_slip, t_axis_azm, t_axis_pl, p_axis_azm, p_axis_pl, b_axis_azm, b_axis_pl, reference)
+    )
+                
+
+
+                new_id = cur.lastrowid
+                print("New ID generated:", new_id)
+                cur.execute('INSERT INTO s2 (N, Delta_MIN , Delta_MAX, Period_Range, Residual, Moment_0, h_depth, Delta_t, l_MAX , l_MIN, V_speed, F_1, F_v, Rupture_plane , Bilateral_model, Reference, earthquake_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', 
+                        (n_s2, delta_min_s2, delta_max_s2, period_range_s2, residual_s2, moment_0_s2, h_depth_s2, IntegralCharacteristics_delta_t_s2, 
+                         IntegralCharacteristics_l_max_s2, IntegralCharacteristics_l_min_s2, IntegralCharacteristics_v_speed_s2, IntegralCharacteristics_f_1_s2, IntegralCharacteristics_f_v_s2, rupture_plane_s2, bilateral_model_s2, reference_s2, new_id))
+
                 conn.commit()
                 cur.close()
                 conn.close()
